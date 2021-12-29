@@ -14,8 +14,10 @@ public class ControllerAdvice {
         return ResponseEntity.badRequest().body(new ErrorMessage(BAD_REQUEST.name(), exception.getMessage()));
     }
 
+
     @ExceptionHandler(Exception.class)
-    public ResponseEntity<ErrorMessage> handleException(CustomException exception) {
-        return ResponseEntity.status(INTERNAL_SERVER_ERROR).body(new ErrorMessage(INTERNAL_SERVER_ERROR.name(), exception.getMessage()));
+    public ResponseEntity<ErrorMessage> handleException(Exception exception) {
+        String errorMessage = exception.toString() + ":" + exception.getMessage();
+        return ResponseEntity.status(INTERNAL_SERVER_ERROR).body(new ErrorMessage("500", errorMessage));
     }
 }
