@@ -27,4 +27,20 @@ public class Post {
         this.description = description;
         this.userId = userId;
     }
+
+    public Long getId() {
+        return this.id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public Long getUserId() {
+        return userId;
+    }
 }
