@@ -1,5 +1,7 @@
 package com.example.sessionpractice.domain;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -28,6 +30,10 @@ public class User {
 
     }
 
+    public boolean isValidPassword(String userLoginId, String userPassword) {
+        return this.userLoginId.equals(userLoginId) && this.userPassword.equals(userPassword);
+    }
+
     public Long getId() {
         return id;
     }
@@ -38,13 +44,5 @@ public class User {
 
     public String getUserName() {
         return userName;
-    }
-
-    public String getUserPassword() {
-        return userPassword;
-    }
-
-    public boolean isValidPassword(String userLoginId, String userPassword) {
-        return this.userLoginId.equals(userLoginId) && this.userPassword.equals(userPassword);
     }
 }

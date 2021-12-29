@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.List;
 
 @RestController
 public class UserController {
@@ -29,9 +30,14 @@ public class UserController {
         return "home for session test";
     }
 
+    @GetMapping("/users")
+    public ResponseEntity<List<User>> getAllUser() {
+        return ResponseEntity.ok().body(userService.getAllUser());
+    }
+
     @PostMapping("/login")
     public void login(@RequestBody LoginRequestDto loginRequestDto, HttpServletRequest request, HttpServletResponse response) throws IOException {
-        User user = userService.login(loginRequestDto);
+        User user = userService.login(loginRequestDto.getUserLoginId(), loginRequestDto.getUserPassword());
         HttpSession session = request.getSession();   //세션이 있으면 있는 세션 반환, 없으면 신규 세션을 생성
         session.setAttribute(SessionConst.SESSION_ID, user);
         response.sendRedirect("/");
