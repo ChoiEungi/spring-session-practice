@@ -25,22 +25,6 @@ public class UserController {
         this.userService = userService;
     }
 
-    @GetMapping("/")
-    public String home() {
-        return "home for session test";
-    }
-
-    @GetMapping("/home")
-    public String noLogin() {
-        return "로그인하지 않았습니다.";
-    }
-
-
-    @GetMapping("/no-auth")
-    public String noAuth() {
-        return "권한이 없습니다.";
-    }
-
     @GetMapping("/users")
     public ResponseEntity<List<User>> getAllUser() {
         return ResponseEntity.ok().body(userService.getAllUser());

@@ -12,8 +12,8 @@
 - 인터셉터 부분 다시 듣기
 - 일단 db 없이 만들어보기 (H2 이용)
 - [x]  User, Post Domain Entity
-- [ ]  Controller, Service CRUD 
-    - [ ]  Post Create 시 User 정보 -> `@ArgumentResolver`
+- [x]  Controller, Service CRUD 
+    - [x]  Post Create 시 User 정보 -> `@ArgumentResolver`
 
 [//]: # (- [ ]  CRUD Test Code 작성)
 - [x]  Session Handler 제작

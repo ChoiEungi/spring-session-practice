@@ -3,7 +3,6 @@ package com.example.sessionpractice.argmentresolver;
 import com.example.sessionpractice.domain.User;
 import com.example.sessionpractice.exception.CustomException;
 import com.example.sessionpractice.utils.SessionConst;
-import org.hibernate.Session;
 import org.springframework.core.MethodParameter;
 import org.springframework.web.bind.support.WebDataBinderFactory;
 import org.springframework.web.context.request.NativeWebRequest;

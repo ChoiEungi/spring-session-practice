@@ -22,7 +22,7 @@ public class SessionPracticeApplication {
     CommandLineRunner run(UserService userService, PostService postService) {
         return args -> {
             Long userId1 = userService.createUser(new RegistrationDto("abc", "eungi", "123"));
-            Long userId2 = userService.createUser(new User("def","eungi2","123!", UserRole.ADMIN));
+            Long userId2 = userService.createUser(new User("def", "eungi2", "123!", UserRole.ADMIN));
             postService.createPost(new PostRequestDto("title1", "content1"), userId1);
             postService.createPost(new PostRequestDto("title2", "content2"), userId1);
             postService.createPost(new PostRequestDto("title3", "content2 by user2"), userId2);

@@ -18,8 +18,6 @@ public class AuthorizationCheckInterceptor implements HandlerInterceptor {
         HttpSession session = request.getSession(false);
         User user = (User) session.getAttribute(SessionConst.SESSION_ID);
         UserRole userRole = user.getUserRole();
-        request.setAttribute(User.USER_ID_STRING, user.getId());
-        request.setAttribute(User.USER_NAME_STRING, user.getUserName());
 
         if (userRole.equals(UserRole.USER) && request.getMethod().equals(HttpMethod.GET.name())) {
             return true;

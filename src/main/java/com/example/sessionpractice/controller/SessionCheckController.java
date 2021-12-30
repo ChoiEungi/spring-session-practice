@@ -3,8 +3,6 @@ package com.example.sessionpractice.controller;
 import com.example.sessionpractice.domain.User;
 import com.example.sessionpractice.exception.CustomException;
 import com.example.sessionpractice.service.SessionInfoService;
-import com.example.sessionpractice.utils.SessionConst;
-import jdk.nashorn.internal.runtime.logging.Logger;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,9 +19,9 @@ public class SessionCheckController {
     }
 
     @GetMapping("/session-info")
-    public User getSession(HttpServletRequest httpServletRequest){
+    public User getSession(HttpServletRequest httpServletRequest) {
         HttpSession session = httpServletRequest.getSession(false);
-        if(session == null) {
+        if (session == null) {
             throw new CustomException("존재하지 않는 세션입니다.");
         }
         return sessionInfoService.getUserBySession(session);
