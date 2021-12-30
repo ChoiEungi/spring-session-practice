@@ -30,6 +30,11 @@ public class UserController {
         return "home for session test";
     }
 
+    @GetMapping("/home")
+    public String home2() {
+        return "home2 for session test";
+    }
+
     @GetMapping("/users")
     public ResponseEntity<List<User>> getAllUser() {
         return ResponseEntity.ok().body(userService.getAllUser());

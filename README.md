@@ -16,10 +16,10 @@
     - [ ]  Post Create 시 User 정보 -> `@ArgumentResolver`
 
 [//]: # (- [ ]  CRUD Test Code 작성)
-- [ ]  Session Handler 제작
-    - [ ]  SessionController
-        - [ ]  Check Session Info
-- [ ]  일단 모든 권한이 가능하도록 Intercepter을 통해 Session 관리
+- [x]  Session Handler 제작
+    - [x]  SessionController
+        - [x]  Check Session Info
+- [x]  일단 모든 권한이 가능하도록 Intercepter을 통해 Session 관리
 
 - [ ] 
 - [ ] 
