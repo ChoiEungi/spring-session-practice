@@ -1,5 +1,6 @@
 package com.example.sessionpractice.controller;
 
+import com.example.sessionpractice.argmentresolver.LoginUser;
 import com.example.sessionpractice.domain.Post;
 import com.example.sessionpractice.domain.User;
 import com.example.sessionpractice.dto.PostRequestDto;
@@ -22,9 +23,9 @@ public class PostController {
     }
 
     @PostMapping("/posts")
-    public void createPost(@RequestBody PostRequestDto postRequestDto, HttpServletRequest request) {
-        User user = (User) request.getSession().getAttribute(SessionConst.SESSION_ID);
-        user.getId();
+    public void createPost(@RequestBody PostRequestDto postRequestDto, @LoginUser Long userId) {
+        System.out.println(userId);
+        postService.createPost(postRequestDto, userId);
 
     }
 
