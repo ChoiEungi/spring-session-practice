@@ -14,10 +14,9 @@
 - [x]  User, Post Domain Entity
 - [ ]  Controller, Service CRUD 
     - [ ]  Post Create 시 User 정보 -> `@ArgumentResolver`
-- [ ]  CRUD Test Code 작성
+
+[//]: # (- [ ]  CRUD Test Code 작성)
 - [ ]  Session Handler 제작
-    - [ ]  SessionManager
-        - [ ]  생성, 조회, 삭제
     - [ ]  SessionController
         - [ ]  Check Session Info
 - [ ]  일단 모든 권한이 가능하도록 Intercepter을 통해 Session 관리
