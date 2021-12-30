@@ -1,6 +1,7 @@
 package com.example.sessionpractice.service;
 
 import com.example.sessionpractice.domain.User;
+import com.example.sessionpractice.domain.UserRole;
 import com.example.sessionpractice.utils.SessionConst;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +20,7 @@ public class SessionInfoServiceTest {
 
     @Test
     public void sessionTest() {
-        User user = new User("abc", "eungi", "123!");
+        User user = new User("abc", "eungi", "123!", UserRole.USER);
         HttpSession session = new MockHttpSession();
         session.setAttribute(SessionConst.SESSION_ID, user);
         User userBySession = sessionInfoService.getUserBySession(session);

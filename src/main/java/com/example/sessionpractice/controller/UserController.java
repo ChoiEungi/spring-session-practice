@@ -31,8 +31,14 @@ public class UserController {
     }
 
     @GetMapping("/home")
-    public String home2() {
-        return "home2 for session test";
+    public String noLogin() {
+        return "로그인하지 않았습니다.";
+    }
+
+
+    @GetMapping("/no-auth")
+    public String noAuth() {
+        return "권한이 없습니다.";
     }
 
     @GetMapping("/users")

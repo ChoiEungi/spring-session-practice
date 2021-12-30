@@ -2,13 +2,12 @@ package com.example.sessionpractice.domain;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class User {
+    public static final String USER_ID_STRING = "id";
+    public static final String USER_NAME_STRING = "userName";
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,10 +19,14 @@ public class User {
 
     private String userPassword;
 
-    public User(String userLoginId, String userName, String userPassword) {
+    @Enumerated(EnumType.STRING)
+    private UserRole userRole;
+
+    public User(String userLoginId, String userName, String userPassword, UserRole userRole) {
         this.userLoginId = userLoginId;
         this.userName = userName;
         this.userPassword = userPassword;
+        this.userRole = userRole;
     }
 
     public User() {
@@ -44,5 +47,9 @@ public class User {
 
     public String getUserName() {
         return userName;
+    }
+
+    public UserRole getUserRole() {
+        return userRole;
     }
 }

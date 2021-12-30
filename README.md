@@ -20,7 +20,6 @@
     - [x]  SessionController
         - [x]  Check Session Info
 - [x]  일단 모든 권한이 가능하도록 Intercepter을 통해 Session 관리
-
-- [ ] 
-- [ ] 
-- [ ]  권한
+- [x]  권한
+   - [x] User는 Get Method, ADMIN은 모든 권한
+   - [X] 권한 별로 Interceptor을 다르게 둬야할듯.
